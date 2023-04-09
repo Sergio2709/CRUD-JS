@@ -1,48 +1,27 @@
-const crearNuevaLinea = (nombre, email) => {
-    const linea = document.createElement("tr");
-    const content = 
-        `<td class="td" data-td>${nombre}</td>
-            <td>${email}</td>
-            <td>
-                <ul class="table__button-control">
-                    <li>
-                        <a
-                            href="../screens/editar_cliente.html"
-                            class="simple-button simple-button--edit"
-                        >Editar</a
-                    >
-                    </li>
-                    <li>
-                        <button
-                            class="simple-button simple-button--delete"
-                            type="button"
-                            >
-                            Eliminar
-                        </button>
-                    </li>
-                </ul>
-            </td>`;
-    linea.innerHTML = content;
-    return linea;
-}
-
-const table = document.querySelector("[data-table]")
-
-//abrir http (metodo, url)
-//CRUD - metodo http (Create - post , read - get , update - put/patch , delete - delete )
-
 const listaClientes = () => 
     fetch("http://localhost:3000/perfil").then(respuesta => respuesta.json());
 
-listaClientes().then((data)=>{
-    data.forEach(perfil => {
-        const nuevaLinea = crearNuevaLinea(perfil.nombre, perfil.email);
-        console.log(nuevaLinea);
-        table.appendChild(nuevaLinea);
+const crearClientes = (nombre, email) =>{
+    return fetch("http://localhost:3000/perfil", {
+        method: "POST",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: JSON.stringify({nombre,email,id: uuid.v4()})
     });
-});
+};
 
-listaClientes().catch((error)=> alert("ocurrio un error"));
+export const eliminarCliente = (id) => {
+    return fetch(`http://localhost:3000/perfil/${id}`, {
+        method: "DELETE",
+    });
+};
+
+export const clientServices = {
+    listaClientes,
+    crearClientes,
+    eliminarCliente,
+};
 
 
 /*  const promise = new Promise((resolve, reject) => {

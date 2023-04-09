@@ -1,14 +1,24 @@
 {
   "perfil": [
     {
-      "nombre": "Harland Lohora",
-      "email": "harland@alura.com",
-      "id": 1
+      "nombre": "Sofia Lozano",
+      "email": "sofialozano9907@gmail.com",
+      "id": "bb86536d-4936-4ec8-9909-81ece4a8dfa5"
+    },
+    {
+      "nombre": "Daniel Castro",
+      "email": "danielCastro@gmail.com",
+      "id": "89ef66c6-8cfc-427b-9b0a-42fec2fdd088"
+    },
+    {
+      "nombre": "Juan Forero",
+      "email": "JuanForero@hotmail.com",
+      "id": "691316aa-7516-4cc7-9d6a-491fc9086b9b"
     },
     {
       "nombre": "Sergio Castillo",
-      "email": "sergioicc@hotmail.com",
-      "id": 2
+      "email": "serggcastillo@gmail.com",
+      "id": "eefa969d-7c9e-4052-bd1d-5be212f4e554"
     }
   ]
 }
